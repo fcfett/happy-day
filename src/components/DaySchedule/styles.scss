@@ -1,0 +1,112 @@
+.day-schedule {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 920px) {
+    &:first-of-type header:after {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-of-type header:after {
+      border-radius: 0 4px 4px 0;
+    }
+
+    &:not(:last-of-type):before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateX(50%);
+      background-color: #f4f4f4;
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 920px) {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+    border-radius: 5px;
+  }
+
+  & > header {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px 0;
+    align-self: stretch;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 4px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #565656;
+      transform: translateY(50%);
+    }
+
+    h1 {
+      background-color: rgba(236, 125, 194, 0.8);
+      border-radius: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 1 auto;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 37px;
+      width: 53px;
+      height: 53px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 25px;
+      margin: 20px 0 0;
+      text-align: center;
+    }
+  }
+
+  & > ul {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: stretch;
+    padding: 18px 6px;
+
+    & > li {
+      align-items: center;
+      border-radius: 5px;
+      display: flex;
+      flex: 1;
+      font-size: 16px;
+      line-height: 20px;
+      justify-content: space-evenly;
+      margin: 6px;
+      padding: 12px;
+
+      span {
+        color: inherit;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &.unavailable {
+        background: rgba(196, 196, 196, 0.3);
+        text-align: center;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

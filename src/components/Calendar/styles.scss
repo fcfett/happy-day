@@ -1,0 +1,60 @@
+.calendar {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 100%;
+
+  & > header {
+    display: flex;
+    align-items: center;
+
+    h1 {
+      flex: 1 0 auto;
+      font-size: 30px;
+      line-height: 37px;
+    }
+
+    aside {
+      flex: 0 1 auto;
+    }
+  }
+
+  & > main {
+    display: flex;
+    flex: 1;
+    position: relative;
+  }
+
+  @media (min-width: 920px) {
+    max-width: 90vw;
+    margin: 0 auto;
+
+    /*
+    & > main {
+      &:before,
+      &:after {
+        content: '';
+        background-color: #fff;
+        bottom: 0;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.17);
+        margin: 20px 0;
+        position: absolute;
+        top: 0;
+        width: 2.5vw;
+      }
+
+      &::before {
+        border-radius: 0 5px 5px 0;
+        left: 0;
+        transform: translateX(-5vw);
+      }
+
+      &::after {
+        border-radius: 5px 0 0 5px;
+        right: 0;
+        transform: translateX(5vw);
+      }
+    }
+    */
+  }
+}
